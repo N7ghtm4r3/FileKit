@@ -253,3 +253,5 @@ public inline fun <T> PlatformFile.withScopedAccess(block: (PlatformFile) -> T):
         }
     }
 }
+
+public expect fun PlatformFile.isSymbolicLink(): Boolean
