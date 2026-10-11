@@ -132,7 +132,7 @@ public expect fun PlatformFile.list(): List<PlatformFile>
  * a directory and maxDepth is positive.
  */
 public fun PlatformFile?.walk(maxDepth: Int = Int.MAX_VALUE): Sequence<PlatformFile> {
-    if (this == null || maxDepth <= 0) {
+    if (this == null || maxDepth <= 0 || isSymbolicLink()) {
         return emptySequence()
     }
 
